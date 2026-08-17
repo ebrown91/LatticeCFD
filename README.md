@@ -1,4 +1,4 @@
-# LatticeFlow
+# LatticeCFD
 
 ## Parametric CFD Analysis of Additively Manufactured Lattice Structures
 
