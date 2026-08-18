@@ -66,28 +66,26 @@ The baseline BCC unit cell currently uses:
 
 The initial BCC geometry has a measured solid volume of:
 
-[
+$$
 V_{solid}=6.183\text{ mm}^3
-]
+$$
 
 The total unit-cell volume is:
 
-[
+$$
 V_{cell}=5^3=125\text{ mm}^3
-]
+$$
 
 Therefore, the measured initial porosity is approximately:
 
-[
-\epsilon
-========
+$$
+{\epsilon} = 1-\frac{6.183}{125}
+$$
 
-1-\frac{6.183}{125}
-]
 
-[
-\boxed{\epsilon\approx95.05%}
-]
+$$
+\epsilon \approx 95.05\%
+$$
 
 This measurement will be used as an initial reference point for calibrating the parametric geometry model.
 
@@ -144,19 +142,38 @@ This allows differences in fluid behavior to be attributed more directly to **to
 A preliminary Python calculator will estimate the strut diameter required for a target BCC porosity.
 
 The initial analytical model treats the lattice members as cylindrical struts.
+- 12 edge struts
+- Each edge strut contributes 1/4
+Therefore
+
+$$
+12x\frac{1}{4}a = 3a
+$$
+
+One complete body diagonal contributes:
+
+$$
+{\sqrt{3}a}
+$$
+
+So: 
+
+$$
+L_{total} = 3a + \sqrt{3}a
+$$
 
 For a BCC unit cell, the approximate total strut length associated with one unit cell is:
 
-[
+$$
 L=(3+\sqrt{3})a
-]
+$$
 
 The approximate solid volume is therefore:
 
-[
+$$
 V_s =
 \frac{\pi d^2}{4}(3+\sqrt{3})a
-]
+$$
 
 where:
 
@@ -165,10 +182,10 @@ where:
 
 Porosity is:
 
-[
+$$
 \epsilon =
 1-\frac{V_s}{a^3}
-]
+$$
 
 This provides an initial estimate for (d).
 
@@ -180,15 +197,15 @@ The actual Fusion geometry contains intersecting struts, and the resulting solid
 
 Therefore, the project will eventually use measured Fusion geometry to establish an empirical relationship:
 
-[
+$$
 \epsilon=f(d)
-]
+$$
 
 This relationship can then be inverted to determine:
 
-[
+$$
 d=f^{-1}(\epsilon)
-]
+$$
 
 for a desired target porosity.
 
@@ -247,9 +264,9 @@ The initial CFD investigation will examine:
 
 The primary relationship of interest is:
 
-[
+$$
 K=\frac{\mu L U}{\Delta P}
-]
+$$
 
 where:
 
@@ -261,12 +278,9 @@ where:
 
 At higher flow rates, the study may be extended to the Darcy–Forchheimer relationship:
 
-[
-\frac{\Delta P}{L}
-==================
-
-\frac{\mu}{K}U+\beta\rho U^2
-]
+$$
+\frac{\Delta P}{L} =\frac{\mu}{K}U+\beta\rho U^2
+$$
 
 This will allow the project to investigate both viscous and inertial contributions to pressure loss.
 
